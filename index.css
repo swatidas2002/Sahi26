@@ -173,7 +173,7 @@ body {
   .heading {
     font-size: clamp(1.8rem, 7vw, 2.8rem);
     text-align: center;
-    margin-top: 8rem;
+    margin-top: 10rem;
     margin-bottom: 0.5rem;
   }
 
@@ -188,7 +188,7 @@ body {
   .feelings {
     font-size: 1rem;
     line-height: 1.5;
-    margin-top: -0.1rem;    /* Reduced top margin to lift text higher */
+    margin-top: -0.5rem;    /* Reduced top margin to lift text higher */
     margin-bottom: 0.7rem;
   }
 
