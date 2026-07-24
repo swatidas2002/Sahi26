@@ -1,6 +1,6 @@
 @font-face {
-    font-family: pixel;
-    src: url('PixelatedEleganceRegular-ovawB.ttf');
+  font-family: pixel;
+  src: url('PixelatedEleganceRegular-ovawB.ttf');
 }
 
 body {
@@ -11,102 +11,79 @@ body {
   background-position: center top;
   background-size: cover;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
+/* Base Wrapper for Laptop */
 .wrapper {
-  height: 800px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: left;
- 
+  justify-content: flex-start; /* Left aligned for laptop layout */
+  padding-left: 5vw;
+  box-sizing: border-box;
 }
 
-/* fixed box size (box-sizing keeps padding inside size) */
+/* Box Styling (Laptop) */
 .box {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-align: left;
   gap: 1rem;
-  opacity: 0.7;
+  opacity: 0.85;
   border-radius: 25px;
-  padding: 30px;
+  padding: 40px;
   
-  width: min(100vw, 700px);
-  max-width: 1000px;
-  height: auto;
-  width: auto;
-  min-height: 500px;
-  max-height: 90vh;
+  /* Increased width settings */
+  width: min(95vw, 900px); /* Raised max-width to give text more breathing room */
+  max-height: 85vh;
   box-sizing: border-box;
-  overflow: hidden;
-  
+  overflow-y: auto;
 }
 
-/* center inner changing content and keep it filling the same space */
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  height: 100%;
   width: 100%;
 }
 
-/* ensure message uses same visual spacing */
 #message {
   display: none;
   width: 100%;
+  margin-top: 1.5rem;
 }
 
-.heading{
-    height: auto;
-    color: #87126f;
-    font-family: 'pixel';
-    font-size: clamp(2rem, 6vw, 3rem);
-    font-weight: 1000;
-    font-weight: strong;
-    text-transform: uppercase;
-    animation: shimmer 5s linear infinite;
-    padding-left: 100px;
-    padding-top: 90px;
-    font-size: 70px;
-    width:fit-content; 
+/* Heading Styling (Laptop) */
+.heading {
+  font-family: 'pixel', sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem 0;
+  width: fit-content;
 
-/* Create a multi-colored, sparkly gradient */
   background: linear-gradient(
     90deg, 
     #6f93b7, #acf0ff, #6cdaff, #47a7db, #ffffff, #4be2e2
   );
-  
-  /* Scale up the background width so it has room to move */
   background-size: 300% auto;
-  
-  /* Clip the background to the text boundary and hide the base text color */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
-  
-  /* Apply the animation loop */
   animation: shine 5s linear infinite;
 }
 
-/* Move the background position to simulate sparkling light movement */
 @keyframes shine {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
+/* Button 56 Base */
 .button-56 {
   width: fit-content;
-       /* horizontally center if it becomes block-level */
-  max-width: none;     /* allow intrinsic width so centering works */
   align-items: center;
   background-color: #ffffff;
   border: 2px solid #180f78;
@@ -115,24 +92,17 @@ body {
   color: #078596;
   cursor: pointer;
   display: flex;
-  font-family: Inter,sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 20px;
   height: 48px;
-  justify-content: left;
+  justify-content: center;
   line-height: 24px;
-  padding: 0 25px;
+  padding: 0 35px;
   position: relative;
-  text-align: left;
   text-decoration: none;
   user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
   font-weight: 600;
-  align-self: flex-start;
-  margin-top: 0;
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-left: 10%;
+  margin-top: 1rem;
 }
 
 .button-56:after {
@@ -156,129 +126,88 @@ body {
 
 .button-56:active {
   background-color: #def6ff;
-  outline: 0;
 }
 
-.button-56:hover {
-  outline: 0;
-}
-
-@media (min-width: 768px) {
-  .button-56 {
-    padding: 0 40px;
-  }
-}
-
-.feelings{
- 
+.feelings {
+  width: 100%;
   text-align: justify;
-  font-size:1.5rem; 
-  color:#e9c6e7; 
-  margin:0 0 1rem 0;
- 
+  font-size: 1.35rem; 
+  line-height: 1.6;
+  color: #e9c6e7; 
+  
+  /* Pushes the paragraph text down slightly from the top */
+  margin-top: 4rem; 
+  margin-bottom: 0.5rem; /* Reduces gap below the text */
 }
 
-@media (max-width: 600px) {
+#backBtn {
+  margin-top: -0.7rem !important;
+}
+
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE OVERRIDES
+   ========================================== */
+@media (max-width: 768px) {
   .wrapper {
-    padding: 20px;
+    justify-content: center;
+    padding: 15px;
   }
 
   .box {
-    padding: 18px;
-    gap: 0.75rem;
-    min-height: 420px;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
   }
 
   .heading {
-    font-size: 2rem;
+    font-size: clamp(2rem, 7vw, 3rem);
+    text-align: center;
   }
 
   .feelings {
     font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 1rem;       /* Keeps a gentle gap at the top on phones */
+    margin-bottom: 0.5rem;  /* Keeps text close to button */
   }
 
   .button-56 {
-    font-size: 14px;
-    height: 44px;
-    padding: 0 18px;
+    font-size: 16px;
+    height: 42px;
+    padding: 0 20px;
+  }
+
+  #backBtn {
+    margin: 0.25rem auto 0 auto !important; /* Neatly centered just below text on phone screens */
   }
 }
 
-#backBtn {
-  margin-left: 0 !important;   /* Cancels auto-centering from the left */
-  margin-right: auto !important; /* Pushes remaining space to the right */
-  margin-bottom: 2rem;
+/* Star background rules */
+.sky { position: relative; width: 100%; height: 100%; }
+.stars-small, .stars-medium, .stars-large { position: absolute; top: 0; left: 0; border-radius: 50%; background: transparent; }
+
+.stars-small {
+  width: 1px; height: 1px;
+  box-shadow: 15vw 25vh #fff, 35vw 10vh #fff, 75vw 40vh #fff, 90vw 15vh #fff, 5vw 65vh #fff, 23vw 80vh #fff, 55vw 50vh #fff, 82vw 70vh #fff, 45vw 30vh #fff, 62vw 88vh #fff, 12vw 45vh #fff, 88vw 85vh #fff;
+  animation: twinkle 2s infinite ease-in-out alternate;
 }
 
-      /* Base container layer for positioning elements */
-        .sky {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
+.stars-medium {
+  width: 2px; height: 2px;
+  box-shadow: 10vw 15vh #fff, 40vw 30vh #fff, 70vw 20vh #fff, 85vw 45vh #fff, 18vw 70vh #fff, 50vw 85vh #fff, 65vw 60vh #fff, 95vw 75vh #fff;
+  animation: twinkle 3s infinite ease-in-out alternate-reverse;
+  animation-delay: 0.5s;
+}
 
-        /* Shared layout properties for all star layers */
-        .stars-small, .stars-medium, .stars-large {
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
-            background: transparent;
-        }
+.stars-large {
+  width: 3px; height: 3px;
+  box-shadow: 25vw 20vh #fff, 60vw 15vh #fff, 80vw 35vh #fff, 30vw 75vh #fff, 58vw 65vh #fff, 72vw 80vh #fff;
+  animation: twinkle 4s infinite ease-in-out alternate;
+  animation-delay: 1.2s;
+}
 
-        /* Layer 1: Tiny stars with high density and fast twinkle */
-        .stars-small {
-            width: 1px;
-            height: 1px;
-            /* Multi-layered box shadows simulate random X/Y coordinates */
-            box-shadow: 
-                 15vw 25vh #fff, 35vw 10vh #fff, 75vw 40vh #fff, 90vw 15vh #fff,
-        5vw 65vh #fff, 23vw 80vh #fff, 55vw 50vh #fff, 82vw 70vh #fff,
-        45vw 30vh #fff, 62vw 88vh #fff, 12vw 45vh #fff, 88vw 85vh #fff,
-        10vw 85vh #fff, 20vw 15vh #fff, 30vw 65vh #fff, 40vw 45vh #fff,
-        50vw 25vh #fff, 60vw 75vh #fff, 70vw 55vh #fff, 80vw 95vh #fff,
-        95vw 35vh #fff, 52vw 12vh #fff, 68vw 38vh #fff, 84vw 62vh #fff;
-            animation: twinkle 2s infinite ease-in-out alternate;
-        }
-
-        /* Layer 2: Medium stars with alternate animation delay */
-        .stars-medium {
-            width: 2px;
-            height: 2px;
-            box-shadow: 
-                10vw 15vh #fff, 40vw 30vh #fff, 70vw 20vh #fff, 85vw 45vh #fff,
-                18vw 70vh #fff, 50vw 85vh #fff, 65vw 60vh #fff, 95vw 75vh #fff,
-                3vw 40vh #fff, 28vw 52vh #fff, 47vw 12vh #fff, 58vw 35vh #fff,
-                78vw 8vh #fff, 82vw 55vh #fff, 14vw 92vh #fff, 33vw 78vh #fff,
-                61vw 93vh #fff, 89vw 63vh #fff, 22vw 28vh #fff, 73vw 88vh #fff;
-            animation: twinkle 3s infinite ease-in-out alternate-reverse;
-            animation-delay: 0.5s;
-        }
-
-        /* Layer 3: Larger, bright stars that pulse slowly */
-        .stars-large {
-            width: 3px;
-            height: 3px;
-            box-shadow: 
-                25vw 20vh #fff, 60vw 15vh #fff, 80vw 35vh #fff,
-                30vw 75vh #fff, 58vw 65vh #fff, 72vw 80vh #fff,
-                8vw 12vh #fff, 45vw 85vh #fff, 92vw 50vh #fff,
-                15vw 55vh #fff, 50vw 40vh #fff, 85vw 90vh #fff,
-                38vw 22vh #fff, 66vw 48vh #fff, 97vw 18vh #fff;
-            animation: twinkle 4s infinite ease-in-out alternate;
-            animation-delay: 1.2s;
-        }
-
-        /* Keyframes controlling opacity fluctuations to make stars twinkle */
-        @keyframes twinkle {
-            0% {
-                opacity: 0.2;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0.3;
-            }
-        }
-
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
