@@ -147,28 +147,49 @@ body {
 /* ==========================================
    MOBILE & TABLET RESPONSIVE OVERRIDES
    ========================================== */
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE OVERRIDES
+   ========================================== */
 @media (max-width: 768px) {
   .wrapper {
-    justify-content: center;
-    padding: 15px;
+    justify-content: center; /* Center box on mobile */
+    align-items: flex-start;  /* Lifts the content toward top instead of middle */
+    padding: 10px;
+    padding-top: 2rem;       /* Keeps a small gap from top of screen */
   }
 
   .box {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
+    align-items: center;
+    min-height: auto;
+  }
+
+  .content {
     align-items: center;
   }
 
+  /* Moves heading up on mobile */
   .heading {
-    font-size: clamp(2rem, 7vw, 3rem);
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
     text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
+  /* Center the start button specifically on mobile */
+  #startBtn {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-self: center !important;
+  }
+
+  /* Moves the feelings letter text slightly higher and reduces gap */
   .feelings {
     font-size: 1rem;
     line-height: 1.5;
-    margin-top: 1rem;       /* Keeps a gentle gap at the top on phones */
-    margin-bottom: 0.5rem;  /* Keeps text close to button */
+    margin-top: 0.25rem;    /* Reduced top margin to lift text higher */
+    margin-bottom: 0.5rem;
   }
 
   .button-56 {
@@ -177,8 +198,9 @@ body {
     padding: 0 20px;
   }
 
+  /* Keeps back button centered directly below letter text */
   #backBtn {
-    margin: 0.25rem auto 0 auto !important; /* Neatly centered just below text on phone screens */
+    margin: 0.25rem auto 0 auto !important;
   }
 }
 
