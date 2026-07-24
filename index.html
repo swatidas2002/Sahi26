@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahithya ka bday</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+     <link rel="icon" href="./sahi.jpeg" />
+</head>
+<body>
+  <div class="sky">
+        <div class="stars-small"></div>
+        <div class="stars-medium"></div>
+        <div class="stars-large"></div>
+    </div>
+    <div class="wrapper">
+  <div class="box">
+    <div class="content">
+      <h1 class="heading">HAPPY BIRTHDAY SAHITHYA!</h1>
+
+      <audio src="song.mp3" id="Audio" autoplay loop></audio>
+      <button class="button-56" id="startBtn" role="button" onclick="startAndSwap()">START</button>
+
+      <!-- new text that appears after click (container keeps box size) -->
+      <div id="message" style="text-align:center; margin-top: 8rem; margin-left:3rem">
+        <p class="feelings" >
+          Dear Sahi,
+          <br><br> Love has your name written on it, as well as home and heart, so it shoudn't come as a suprise that the time spent with you has rendered me unable to express 
+          the things I feel for you. They go beyond the realm of thoughts and words and will continue to sour higher and higher.<br><br> I cannot possible think of a life with no presence of you in it. Hence it makes
+           me happy that I have been part of your past, present and will be part of your future as well. You are a kind, fiery, 
+           intelligent woman and I am proud to see you blossom everyday. Have an amazing birthday, my love!
+
+          <br><br>
+          
+           <span style="display: block; text-align: right;">With love and humour<br>-Swati</span>
+          
+          
+        </p>
+        <button class="button-56" id="backBtn" onclick="revertSwap()">Go back</button>
+      </div>
+    </div>
+
+    <script>
+      function startAndSwap(){
+        var audio = document.getElementById("Audio");
+        if(audio.paused) audio.play();
+        document.querySelector('.heading').style.display = 'none';
+        document.getElementById('startBtn').style.display = 'none';
+        document.getElementById('message').style.display = 'block';
+      }
+      function revertSwap(){
+        document.querySelector('.heading').style.display = '';
+        document.getElementById('startBtn').style.display = '';
+        document.getElementById('message').style.display = 'none';
+      }
+    </script>
+  </div>
+</div>
+
+</body>
+</html>
