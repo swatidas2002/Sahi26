@@ -174,7 +174,7 @@ body {
     font-size: clamp(1.8rem, 7vw, 2.8rem);
     text-align: center;
     margin-top: 0.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   /* Center the start button specifically on mobile */
@@ -189,7 +189,7 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     margin-top: 0.25rem;    /* Reduced top margin to lift text higher */
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
   }
 
   .button-56 {
