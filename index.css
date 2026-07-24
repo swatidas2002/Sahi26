@@ -188,7 +188,7 @@ body {
   .feelings {
     font-size: 1rem;
     line-height: 1.5;
-    margin-top: -0.5rem;    /* Reduced top margin to lift text higher */
+    margin-top: -0.9rem;    /* Reduced top margin to lift text higher */
     margin-bottom: 0.7rem;
   }
 
